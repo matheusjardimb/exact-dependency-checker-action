@@ -14,11 +14,11 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3.5.3
+      - uses: actions/checkout@v4.1.7
 
-      - uses: actions/setup-node@v3.7.0
+      - uses: actions/setup-node@v4.0.1
         with:
-          node-version: 16
+          node-version-file: '.nvmrc'
 
       - run: npm ci
       - run: npx jest --coverageReporters="json" --collectCoverage=true
@@ -31,7 +31,7 @@ jobs:
           echo "### Total coverage: ${TOTAL}%" >> $GITHUB_STEP_SUMMARY
 
       - name: "Upload progress to gist, to update badge"
-        uses: schneegans/dynamic-badges-action@v1.6.0
+        uses: schneegans/dynamic-badges-action@v1.7.0
         with:
           # GIST_TOKEN is a GitHub personal access token with scope "gist".
           auth: ${{ secrets.GIST_TOKEN }}

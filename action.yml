@@ -11,7 +11,11 @@ inputs:
     description: 'Complete path of the package.json file to be evaluated'
     required: false
     default: 'package.json'
+  quiet:
+    description: 'Reduces the amount of logs printed during evaluation.'
+    required: false
+    default: false
 
 runs:
-  using: 'node16'
+  using: 'node20'
   main: 'dist/index.js'

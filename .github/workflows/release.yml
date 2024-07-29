@@ -22,13 +22,13 @@ jobs:
       #        run: exit 1
 
       - name: Checking out!
-        uses: actions/checkout@v3.5.3
+        uses: actions/checkout@v4.1.7
         with:
           ref: ${{ env.tag_name }}
       - name: Print github context payload
         run: echo '${{ toJSON(github) }}'
 
       - name: Publish action
-        uses: actions-on-packages/package-action@0.4.1
+        uses: actions-on-packages/package-action@0.5.0
 #        with:
 #            path: 'dist/'

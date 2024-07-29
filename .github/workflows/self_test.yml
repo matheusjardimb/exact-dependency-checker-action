@@ -15,11 +15,11 @@ jobs:
   self_test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3.5.3
+      - uses: actions/checkout@v4.1.7
 
-      - uses: actions/setup-node@v3.7.0
+      - uses: actions/setup-node@v4.0.1
         with:
-          node-version: 16
+          node-version-file: '.nvmrc'
 
       - run: |
           npm ci
